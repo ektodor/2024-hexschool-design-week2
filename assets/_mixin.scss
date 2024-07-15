@@ -1,0 +1,34 @@
+// 格線系統
+.container {
+  width: $base-container;
+  padding-right: calc(#{$base-gutter} * 0.5);
+  padding-left: calc(#{$base-gutter} * 0.5);
+  margin: 0 auto;
+}
+
+@mixin col-system($col-sum: $base-col-num) {
+  display: flex;
+  margin-right: calc(#{$base-gutter} * -0.5);
+  margin-left: calc(#{$base-gutter} * -0.5);
+  flex-wrap: wrap;
+  @for $num from 1 through $col-sum {
+    .col-#{$num} {
+      width: calc(100% * (#{$num} / #{$col-sum}));
+      padding: 0 calc(#{$base-gutter} * 0.5);
+    }
+  }
+}
+
+.row {
+  @include col-system($base-col-num);
+}
+
+.row- {
+  &7 {
+    @include col-system(7);
+    gap: 24px;
+  }
+  &8 {
+    @include col-system(8);
+  }
+}

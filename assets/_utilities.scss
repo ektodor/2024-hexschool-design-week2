@@ -1,0 +1,64 @@
+$font-sizes: map-merge($title-font-sizes, $text-font-sizes);
+@each $key, $value in $font-sizes {
+  .fs-#{$key} {
+    font-size: $value;
+  }
+}
+
+.text-align {
+  &-r {
+    text-align: right;
+  }
+}
+
+.align-items {
+  &-center {
+    align-items: center;
+  }
+}
+
+.m {
+  &r-16 {
+    margin-right: 1rem;
+  }
+  &b-16 {
+    margin-bottom: 1rem;
+  }
+  &b-36 {
+    margin-bottom: 2.25rem;
+  }
+  &l-auto {
+    margin-left: auto;
+  }
+}
+.p {
+  &y-6 {
+    padding: 6rem 0;
+  }
+  &y-10 {
+    padding: 10rem 0;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+.row-gap-28 {
+  row-gap: 1.75rem;
+}
+.bg-dark-blue {
+  background: $dark-blue;
+}
+.bg-wave {
+  background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/2023week2/background-img.png");
+}
+
+.bg-white {
+  background: white;
+  color: black;
+}
+
+.card .card-border {
+  border: 1px solid #e3e3e3;
+  padding: 16px;
+}
